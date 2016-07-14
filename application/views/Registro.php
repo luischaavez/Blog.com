@@ -20,27 +20,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <fieldset>
     <legend align="center"><b>Sign Up</b></legend>
     <div class="form-group">
-      <label for="Name" class="col-lg-2 control-label">Name:</label>
+      <label for="nameu" class="col-lg-2 control-label">Name:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="Name" placeholder="Juan">
+        <input type="text" class="form-control" name="nameu" placeholder="Juan">
       </div>
     </div>
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">Email:</label>
+      <label for="email" class="col-lg-2 control-label">Email:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="Email" placeholder="example@example.com">
+        <input type="text" class="form-control" name="email" placeholder="example@example.com">
       </div>
     </div>
      <div class="form-group">
-      <label for="User" class="col-lg-2 control-label">User name:</label>
+      <label for="user" class="col-lg-2 control-label">User name:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="User" placeholder="Juan_197">
+        <input type="text" class="form-control" name="user" placeholder="Juan_197">
       </div>
     </div>
     <div class="form-group">
-      <label for="Password" class="col-lg-2 control-label">Password:</label>
+      <label for="pass" class="col-lg-2 control-label">Password:</label>
       <div class="col-lg-10">
-        <input type="password" class="form-control" id="Password" placeholder="********">
+        <input type="password" class="form-control" name="pass" placeholder="********">
       </div>
     </div>
      <div class="checkbox col-lg-10">
