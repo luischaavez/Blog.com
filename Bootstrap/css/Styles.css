@@ -7,8 +7,10 @@
 	padding: 15px;
 
 }
-input{
-	border-bottom: 15px;
+.btn{
+	padding: 8px;
+	padding-bottom: 3px;
+	text-align: center;
 	vertical-align: center;
 }
 .checkbox{

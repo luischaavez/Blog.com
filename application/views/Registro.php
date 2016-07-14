@@ -22,30 +22,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="form-group">
       <label for="Name" class="col-lg-2 control-label">Name:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="Name" placeholder="Juan">
+        <input type="text" class="form-control" id="Name" placeholder="Juan" required autofocus>
       </div>
     </div>
     <div class="form-group">
       <label for="inputEmail" class="col-lg-2 control-label">Email:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="Email" placeholder="example@example.com">
+        <input type="text" class="form-control" id="Email" placeholder="example@example.com" required>
       </div>
     </div>
      <div class="form-group">
       <label for="User" class="col-lg-2 control-label">User name:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="User" placeholder="Juan_197">
+        <input type="text" class="form-control" id="User" placeholder="Juan_197" required>
       </div>
     </div>
     <div class="form-group">
       <label for="Password" class="col-lg-2 control-label">Password:</label>
       <div class="col-lg-10">
-        <input type="password" class="form-control" id="Password" placeholder="********">
+        <input type="password" class="form-control" id="Password" placeholder="********" required>
       </div>
     </div>
      <div class="checkbox col-lg-10">
           <label>
-            <input type="checkbox"> Acepto los términos y condiciones
+            <input type="checkbox"> I accept the Terms & Conditions
           </label>
         </div>
     <div class="form-group">
