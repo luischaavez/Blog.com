@@ -8,7 +8,7 @@ class Reg extends CI_Controller {
 		parent::__construct();
 		/*Cargar la libreria Bcrypt*/
 		this->load->library('bcrypt');
-		this->load->model('secure_bcrypt_model');
+		this->load->model('Registro_model');
 		this->load->library(array('form_validation', 'session'));
 		this->load->helper(array('url', 'form'));
 		this->load->database('default');
