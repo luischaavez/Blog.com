@@ -7,8 +7,8 @@ class Reg extends CI_Controller {
 	{
 		parent::__construct();
 		/*Cargar la libreria Bcrypt*/
-		$this->load->library('bcrypt');
-		$this->load->model('Registro_model');
+		$this->load->library('encryption');
+		$this->load->model('registro_model');
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->helper(array('url', 'form'));
 		$this->load->database('default');
@@ -59,9 +59,9 @@ class Reg extends CI_Controller {
 		$email = $this->input->post('email');
 		$username = $this->input->post('user');
 		$password = $this->input->post('pass');
-		$hash = $this->bcrypt->hash_password($password);
+		$hash = $this->encryption->hash_password($password);
 		//Probar si la contraseña se encripto
-		if ($this->bcrypt->check_password($password, $hash))
+		if ($this->encryption->check_password($password, $hash))
 		{
 
 			$insert_pass = $this->Registro_model->save_pass($name, $email, $username, $hash);
