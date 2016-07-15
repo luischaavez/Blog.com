@@ -7,11 +7,11 @@ class Reg extends CI_Controller {
 	{
 		parent::__construct();
 		/*Cargar la libreria Bcrypt*/
-		this->load->library('bcrypt');
-		this->load->model('Registro_model');
-		this->load->library(array('form_validation', 'session'));
-		this->load->helper(array('url', 'form'));
-		this->load->database('default');
+		$this->load->library('bcrypt');
+		$this->load->model('Registro_model');
+		$this->load->library(array('form_validation', 'session'));
+		$this->load->helper(array('url', 'form'));
+		$this->load->database('default');
 	}
 
 
@@ -19,7 +19,7 @@ class Reg extends CI_Controller {
 	public function index()
 	{
 		$data['titulo'] = 'Registro';
-		$data['token'] = this->token();
+		$data['token'] = $this->token();
 		$this->load->view('Registro');
 	}
 
@@ -27,7 +27,7 @@ class Reg extends CI_Controller {
 	public function token(){
 
 		$token = md5(uniqid(rand(), true));
-		this->session->set_userdata('token', $token);
+		$this->session->set_userdata('token', $token);
 		return $token;
 
 	}
@@ -35,7 +35,7 @@ class Reg extends CI_Controller {
 /*Procesar los datos de la vista*/
 	public function registro_bcrypt()
 	{
-		if($this->input->post('token') && this->input->post('token') == this->session->userdata('token'))
+		if($this->input->post('token') && $this->input->post('token') == $this->session->userdata('token'))
 		{
 			//Reglas
 			$this->form_validation->set_rules('nameu', 'Nombre del usuario', 'required|trim|max_length[50]|xss_clean');
@@ -49,7 +49,7 @@ class Reg extends CI_Controller {
 			$this->form_validation->set_message('max_length', 'El campo no puede tener mas de 50 caracteres');
 
 			//Si algo falla se mostraran errores
-		if ($this->form_validation-run() ==FALSE)
+		if ($this->form_validation->run() ==FALSE)
 		{
 			$this->index();
 		}else
@@ -61,10 +61,10 @@ class Reg extends CI_Controller {
 		$password = $this->input->post('pass');
 		$hash = $this->bcrypt->hash_password($password);
 		//Probar si la contraseña se encripto
-		if ($this->)bcrypt->check_password($password, $hash))
+		if ($this->bcrypt->check_password($password, $hash))
 		{
 
-			$insert_pass = $this->secure_bcrypt_model->save_pass($name, $email, $username, $hash);
+			$insert_pass = $this->Registro_model->save_pass($name, $email, $username, $hash);
 			if ($insert_pass)
 			{
 				redirect(base_url().'Reg/index');
