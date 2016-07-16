@@ -3,51 +3,50 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-  <title><?php=$titulo?></title>
+  <title><?php echo $titulo?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login</title>
 
-	<link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="Bootstrap/css/Styles.css" rel="stylesheet">
+	<link href="Bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="Bootstrap/css/Styles.css" type="text/css" rel="stylesheet">
 
 	
 </head>
 <body>
 
 
-
-<form class="form-horizontal BoxReg" method="POST">
+<?php echo form_open(base_url().'Reg/registro_bcrypt') ?>
+<div class="form-horizontal BoxReg">
   <fieldset>
     <legend align="center"><b>Sign Up</b></legend>
-    <?php=form_open(base_url().'Reg/registro_bcrypt')?>
     <div class="form-group">
       <label for="nameu" class="col-lg-2 control-label">Name:</label>
       <div class="col-lg-10">
         <input type="text" class="form-control" name="nameu" placeholder="Juan">
-        <p><?php=form_error('nameu')?></p>
+        <p><?php echo form_error('nameu')?></p>
       </div>
     </div>
     <div class="form-group">
       <label for="email" class="col-lg-2 control-label">Email:</label>
       <div class="col-lg-10">
         <input type="text" class="form-control" name="email" placeholder="example@example.com">
-        <p><?php=form_error('email')?></p>
+        <p><?php echo form_error('email')?></p>
       </div>
     </div>
      <div class="form-group">
       <label for="user" class="col-lg-2 control-label">User name:</label>
       <div class="col-lg-10">
         <input type="text" class="form-control" name="user" placeholder="Juan_197">
-        <p><?php=form_error('user')?></p>
+        <p><?php echo form_error('user')?></p>
       </div>
     </div>
     <div class="form-group">
       <label for="pass" class="col-lg-2 control-label">Password:</label>
       <div class="col-lg-10">
         <input type="password" class="form-control" name="pass" placeholder="********">
-        <p><?php=form_error('pass')?></p>
-        <input type="hidden" name="token" value="<?php=$token?>" />
+        <p><?php echo form_error('pass')?></p>
+        <input type="hidden" name="token" value="<?php echo $token?>" />
       </div>
     </div>
      <div class="checkbox col-lg-10">
@@ -62,9 +61,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
     </div>
   </fieldset>
-</form>
-<?php=form_close()?>
-<?anchor(base_url/().'Reg/registro_bcrypt', 'Registro')?>
+</div>
+<?php form_close()?>
+<?anchor('Reg/index', 'Registro')?>
 
 
 

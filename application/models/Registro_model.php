@@ -11,11 +11,11 @@ class Registro_model extends CI_Model {
 	public function save_data($name, $email, $username, $hash)
 	{
 		$data = array(
-			'nombreu' => $name,
+			'nombre' => $name,
 			'email' => $email,
 			'username' => $username,
 			'password' => $hash
-		 );
+		);
 
 		return $this->db->insert('Users', $data);
 	}
