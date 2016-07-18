@@ -69,6 +69,7 @@ class Reg extends CI_Controller {
 			if ($insert_pass)
 			{
 				echo "<script> alert ('¡Sucesfully!')</script>";
+				redirect(base_url().'Login/index');
 			}
 		}else
 		{

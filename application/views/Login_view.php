@@ -29,15 +29,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           <?php echo form_open(base_url().'Login/entrada_login') ?>
                               <div class="form-group">
                                   <label for="email" class="control-label">Email</label>
-                                  <input type="email" class="form-control" id="email" name="email" required title="Please enter you username" placeholder="example@gmail.com">
+                                  <input type="email" class="form-control" name="email" placeholder="example@example.com">
+                                  <p><?php echo form_error('email')?></p>
                                   <span class="help-block"></span>
                               </div>
                               <div class="form-group">
                                   <label for="password" class="control-label">Password</label>
-                                  <input type="password" class="form-control" id="password" name="password" value="" required title="Please enter your password">
+                                  <input type="password" class="form-control" name="pass" placeholder="********">
+                                  <p><?php echo form_error('pass')?></p>
                                   <span class="help-block"></span>
                               </div>
-                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+                              <input type="hidden" name="token" value="<?php echo $token?>" />
                               <div class="checkbox">
                                   <label>
                                       <input type="checkbox" name="remember" id="remember"> Remember login
@@ -45,9 +47,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           
                               </div>
                               <button type="submit" class="btn btn-success btn-block">Login</button>
-                              <a href="/forgot/" class="btn btn-default btn-block">Help to login</a>
-                          <?php echo form_close() ?>
-                          <?php anchor('Reg/index', 'Registro') ?>
+                              <a href="#" class="btn btn-default btn-block">Help to login</a>
+                          <?php  echo form_close() ?>
+                          
                       </div>
                   </div>
                   <div class="col-xs-6">
@@ -60,7 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
                           <li><a href="/read-more/"><u>Read more</u></a></li>
                       </ul>
-                      <p><a href="/new-customer/" class="btn btn-info btn-block">Yes please, register now!</a></p>
+                      <p><a href="<?php base_url()?>/Reg/index" class="btn btn-info btn-block">Yes please, register now!</a></p>
                   </div>
               </div>
           </div>

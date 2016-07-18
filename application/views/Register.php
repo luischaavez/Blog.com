@@ -62,7 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </fieldset>
 </div>
 <?php form_close()?>
-<?anchor('Reg/index', 'Registro')?>
+<?anchor('Login/index', 'Login')?>
 
 
 

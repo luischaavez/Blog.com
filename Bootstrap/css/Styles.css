@@ -7,10 +7,8 @@
 	padding: 15px;
 
 }
-<<<<<<< HEAD
-=======
 
-Fondo{
+.Fondo{
 	background:  url('http://farm3.staticflickr.com/2832/12303719364_c25cecdc28_b.jpg');
 	background-size: cover;
 	padding: 0;
@@ -21,7 +19,7 @@ input{
 	border-bottom: 15px;
 	vertical-align: center;
 }
->>>>>>> Registro
+
 .checkbox{
 	padding-bottom: 20px;
 	font-style: bold;

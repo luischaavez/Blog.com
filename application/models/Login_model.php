@@ -14,12 +14,11 @@ class Login_model extends CI_Model {
 		$this->db->where('email', $email);
 		$query = $this->db->get('Users');
 		//Si coincide se procede
-		if ($query->num_rows()==1)
-		{
+		if ($query->num_rows() > 0){
 			$user = $query->row();
 			/*En la siguiente variable se almacena la contraseña de la bd para comprobarse*/
 			$pass = $user->password;
-
+			
 			/*Procedimiento para comprobar 
 			si el password coincide*/
 			if($this->bcrypt->check_password($hash, $pass))
@@ -27,11 +26,10 @@ class Login_model extends CI_Model {
 				return $query->row();
 			}else
 			{
-				$this->session->set_flashdata('Usuario o contraseña incorrecta');
+				echo "User or password incorrect";
+				
 			}
 
-
 		}
-
 	}
 }
