@@ -1,17 +1,11 @@
 .BoxReg{
 	border: 5px;
 	border-radius: 6px;
-	background: rgba(0,0,0,0.2);
+	background: rgba(76, 175, 80, 0.3);
 	margin: 145px auto;
 	width: 430px;
 	padding: 15px;
 
-}
-.btn{
-	padding: 8px;
-	padding-bottom: 3px;
-	text-align: center;
-	vertical-align: center;
 }
 .checkbox{
 	padding-bottom: 20px;
