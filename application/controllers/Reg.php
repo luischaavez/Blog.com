@@ -8,7 +8,7 @@ class Reg extends CI_Controller {
 		parent::__construct();
 		/*Cargar la libreria Bcrypt*/
 		$this->load->library('bcrypt');
-		$this->load->model('Registro_model');
+		$this->load->model('Register_model');
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->helper(array('url', 'form'));
 		$this->load->database('default');
@@ -18,9 +18,9 @@ class Reg extends CI_Controller {
 	//Cargar form de Registro
 	public function index()
 	{
-		$data['titulo'] = 'Registro';
+		$data['titulo'] = 'Register';
 		$data['token'] = $this->token();
-		$this->load->view('Registro',$data);
+		$this->load->view('Register',$data);
 	}
 
 //Clave aleatoria
@@ -46,9 +46,9 @@ class Reg extends CI_Controller {
 			$this->form_validation->set_rules('pass', 'password', 'required|trim|min_length[6]|max_length[50]');
 
 			
-			$this->form_validation->set_message('required', 'El campo es obligatorio');
-			$this->form_validation->set_message('min_length', 'El campo debe tener al menos 6 caracteres');
-			$this->form_validation->set_message('max_length', 'El campo no puede tener mas de 50 caracteres');
+			$this->form_validation->set_message('required', 'This field must not be empty');
+			$this->form_validation->set_message('min_length', 'The field needs to have at less 6 chars');
+			$this->form_validation->set_message('max_length', 'The field can not have more than 50 chars');
 
  	if (!$this->form_validation->run())
  	{
@@ -65,14 +65,14 @@ class Reg extends CI_Controller {
 		if ($this->bcrypt->check_password($password, $hash))
 		{
  
-			$insert_pass = $this->Registro_model->save_data($name, $email, $username, $hash);
+			$insert_pass = $this->Register_model->save_data($name, $email, $username, $hash);
 			if ($insert_pass)
 			{
-				echo "<script> alert ('Datos guardados con exito')</script>";
+				echo "<script> alert ('¡Sucesfully!')</script>";
 			}
 		}else
 		{
-			throw new Exception("Error Processing Request", 1);
+			throw new Exception("Error Processing request", 1);
 			echo Exception;
 		}
  
