@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-	<div class="Fondo">
+	<div class="container">
     <div id="login-overlay" class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header">
