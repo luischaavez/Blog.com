@@ -29,6 +29,7 @@ class Login extends CI_Controller {
 
   	public function entrada_login()
   	{
+
   		//Verificar la clave token
   		if ($this->input->post('token') && $this->input->post('token') == $this->session->userdata('token')){
 
@@ -46,7 +47,7 @@ class Login extends CI_Controller {
 
   		if (!$this->form_validation->run())	
   		{
-  			$this->index;
+  			$this->index();
   		}else
   		{
 
