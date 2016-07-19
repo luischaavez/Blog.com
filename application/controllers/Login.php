@@ -8,9 +8,6 @@ class Login extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('bcrypt');
-    $this->load->model('Login_model');
-		$this->load->library(array('form_validation', 'session'));
-		$this->load->helper(array('url', 'form'));
 		$this->load->database('default');
 	}
 
@@ -39,14 +36,14 @@ class Login extends CI_Controller {
 			$this->form_validation->set_rules('email', 'email', 'required|trim|max_length[50]');
 			$this->form_validation->set_rules('pass', 'pass', 'required|trim|max_length[50]');
 
-			
+
 			$this->form_validation->set_message('required', 'El campo es obligatorio');
 			$this->form_validation->set_message('min_length', 'El campo debe tener al menos 6 caracteres');
 			$this->form_validation->set_message('max_length', 'El campo no puede tener mas de 50 caracteres');
 
 
-  		
-  		if (!$this->form_validation->run())	
+
+  		if (!$this->form_validation->run())
   		{
   			$this->index();
   		}else
@@ -54,7 +51,7 @@ class Login extends CI_Controller {
 
   			$email = $this->input->post('email');
   			$password = $this->input->post('pass');
-  
+
 
   			$login = $this->Login_model->login($email, $password);
 
@@ -62,13 +59,15 @@ class Login extends CI_Controller {
   			{
   				$dat = array(
   					'logueado' => TRUE,
+						'username' => $login->username,
   					'email' => $login->email,
   					'pass' => $login->password
   					);
   				$this->session->set_userdata($dat);
           echo "<script> alert('Sucesfully')</script>";
-  			}
 
+					redirect(base_url().'Home/index');
+  			}
   		}
   	}
   }

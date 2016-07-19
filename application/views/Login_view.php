@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link href="<?php  echo base_url()?>/Bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="<?php  echo base_url()?>/Bootstrap/css/Styles.css" type="text/css" rel="stylesheet">
 
-	
+
 </head>
 <body>
 
@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           <?php echo form_open(base_url().'Login/entrada_login') ?>
                               <div class="form-group">
                                   <label for="email" class="control-label">Email</label>
-                                  <input type="email" class="form-control" name="email" placeholder="example@example.com">
+                                  <input type="email" class="form-control" name="email" value="<?php echo set_value('email')?>" placeholder="example@example.com">
                                   <p><?php echo form_error('email')?></p>
                                   <span class="help-block"></span>
                               </div>
@@ -44,12 +44,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   <label>
                                       <input type="checkbox" name="remember" id="remember"> Remember login
                                   </label>
-          
+
                               </div>
                               <button type="submit" class="btn btn-success btn-block">Login</button>
                               <a href="#" class="btn btn-default btn-block">Help to login</a>
                           <?php  echo form_close() ?>
-                          
+
                       </div>
                   </div>
                   <div class="col-xs-6">
