@@ -18,16 +18,16 @@ class Login_model extends CI_Model {
 			$user = $query->row();
 			/*En la siguiente variable se almacena la contraseña de la bd para comprobarse*/
 			$pass = $user->password;
-			
-			/*Procedimiento para comprobar 
+
+			/*Procedimiento para comprobar
 			si el password coincide*/
 			if($this->bcrypt->check_password($hash, $pass))
 			{
 				return $query->row();
 			}else
 			{
-				echo "User or password incorrect";
-				
+			redirect(base_url());
+
 			}
 
 		}
