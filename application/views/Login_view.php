@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="modal-content">
           <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Login to site.com</h4>
+              <h4 class="modal-title" id="myModalLabel">Login to Blog.com</h4>
           </div>
           <div class="modal-body">
               <div class="row">
@@ -55,14 +55,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="col-xs-6">
                       <p class="lead">Register now for <span class="text-success">FREE</span></p>
                       <ul class="list-unstyled" style="line-height: 2">
-                          <li><span class="fa fa-check text-success"></span> See all your orders</li>
-                          <li><span class="fa fa-check text-success"></span> Fast re-order</li>
+                          <li><span class="fa fa-check text-success"></span> See all your posts</li>
+                          <li><span class="fa fa-check text-success"></span> All the things that you need</li>
                           <li><span class="fa fa-check text-success"></span> Save your favorites</li>
                           <li><span class="fa fa-check text-success"></span> Fast checkout</li>
-                          <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
-                          <li><a href="/read-more/"><u>Read more</u></a></li>
+                          <li><span class="fa fa-check text-success"></span> Get points</li>
                       </ul>
-                      <p><a href="<?php base_url()?>/Reg/index" class="btn btn-info btn-block">Yes please, register now!</a></p>
+                      <p><a href="<?php base_url()?>/Reg/index" class="btn btn-info btn-block">Register now!</a></p>
                   </div>
               </div>
           </div>
