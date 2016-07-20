@@ -7,12 +7,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="<?php echo base_url()?>/Bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="<?php echo base_url()?>/Bootstrap/css/Styles.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/css/Styles.css" type="text/css" rel="stylesheet">
 
-	
+
 </head>
-<body>
+<body style="background-color: #9F5F34">
 
 
 <?php echo form_open(base_url().'Reg/registro_bcrypt') ?>
@@ -68,6 +68,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
 </body>
 </html>
