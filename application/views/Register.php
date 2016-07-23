@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 </head>
-<body style="background-color: #9F5F34">
+<body>
 
 
 <?php echo form_open(base_url().'Reg/registro_bcrypt') ?>

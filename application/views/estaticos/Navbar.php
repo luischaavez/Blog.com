@@ -24,8 +24,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Hola mundo</a></li>
+                <li><a href="<?php base_url()?>/Home/index">Home</a></li>
+
+                <li><a href="<?php base_url()?>/Profile_controller"><?php
+                if ($this->session->userdata('logueado'))
+                {
+                  echo "Profile";
+                }else{
+                  echo "";
+                }
+                 ?></a></li>
                  <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <span class="caret"></span>
@@ -45,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             echo $this->session->userdata('username');
 
                           }else{
-                            echo "Guess";
+                            echo "Guest";
                           }
                           ?></strong>
                         <span class="glyphicon glyphicon-chevron-down"></span>
@@ -66,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                       echo $this->session->userdata('username');
 
                                     }else{
-                                      echo "Guess";
+                                      echo "Guest";
                                     }
                                     ?></strong>
                                     </p>
@@ -77,7 +85,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             echo $this->session->userdata('email');
 
                                           }else{
-                                           echo "<a class='btn btn-success btn-block'>Sign In</a>";
+                                            $url = base_url().'Login';
+                                           echo "<a href='$url' class='btn btn-success btn-block'>Sign In</a>";
                                           }
                                           ?>
 

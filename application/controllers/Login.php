@@ -64,9 +64,12 @@ class Login extends CI_Controller {
   					'pass' => $login->password
   					);
   				$this->session->set_userdata($dat);
-          echo "<script> alert('Sucesfully')</script>";
+					$url = base_url().'Home';
+          echo "<script> alert('Welcome');
+					window.location.href='$url';
+					</script>";
 
-					redirect(base_url().'Home');
+
   			}
   		}
   	}
