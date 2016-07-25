@@ -65,8 +65,11 @@ class Reg extends CI_Controller {
 			$insert_pass = $this->Register_model->save_data($name, $email, $username, $hash);
 			if ($insert_pass)
 			{
-				echo "<script> alert ('¡Sucesfully!')</script>";
-				redirect(base_url().'Login/index');
+				$url = base_url().'Login/index';
+				echo "<script> alert ('¡Sucesfully!');
+				window.location.href = '$url';
+				</script>";
+
 			}
 		}else
 		{

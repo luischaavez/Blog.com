@@ -43,6 +43,52 @@ Class Home extends CI_Controller
 
     $this->Comment_model->insert($comment);
     if ($comment){
-    }
-}
+      }
+  }
+
+  public function vista_newpost(){
+    $data['titulo'] = 'New post';
+    $this->load->view('estaticos/Navbar',$data);
+    $this->load->view('New_post');
+  }
+
+  public function new_post()
+  {
+    //Reglas
+    $this->form_validation->set_rules('tittle', 'tittle', 'required|min_length[20]|trim');
+    $this->form_validation->set_rules('desc', 'desc', 'required|min_length[20]|trim');
+    $this->form_validation->set_rules('content', 'content', 'required|min_length[20]|trim');
+
+    $this->form_validation->set_message('required', 'This field must not be empty');
+    $this->form_validation->set_message('min_length', 'The field needs to have at less 20 chars');
+
+//Verificar la validacion de las reglas
+    if (!$this->form_validation->run() == FALSE)
+    {
+      $this->vista_newpost();
+    }else {
+
+      $title = $this->input->post('title');
+      $description = $this->input->post('desc');
+      $content = $this->input->post('content');
+      $fecha = date('Y-m-d H:i:s');
+      $username = $this->session->userdata('username');
+
+      $post = $this->Posts_model->insert_post($title, $description, $content, $fecha, $username);
+
+      if($post){
+        $url = base_url().'Home/index';
+				echo "<script> alert ('¡Published!');
+				window.location.href = '$url';
+				</script>";
+
+      }else {
+
+        echo "<script> alert ('¡Error!');
+        </script>";
+
+      }
+      }
+
+  }
 }

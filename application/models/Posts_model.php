@@ -8,7 +8,21 @@ class Posts_model extends CI_Model {
     parent::__construct();
   }
 
-   function lista_posts()
+  //Insertar los post
+  public function insert_post($title, $description, $content, $fecha, $username)
+  {
+    $data = array(
+      'Nombre_articulo' => $title,
+      'Contenido' => $description,
+      'Contenido_total' => $content,
+      'Fecha' => $fecha,
+      'Autor' => $username,
+      'Id_categoria' => 2);
+
+      return $this->db->insert('Posts', $data);
+  }
+
+  public function lista_posts()
   {
     $this->db->order_by('Id_articulo', 'desc');
     $con = $this->db->get('Posts');

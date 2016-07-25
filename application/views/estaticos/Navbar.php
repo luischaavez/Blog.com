@@ -34,14 +34,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   echo "";
                 }
                  ?></a></li>
-                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Link 2</a></li>
-                    </ul>
-                 </li>
+
+                 <li><a href="<?php base_url()?>/Home/vista_newpost"><?php
+                 if ($this->session->userdata('logueado'))
+                 {
+                   echo "New post";
+                 }else{
+                   echo "";
+                 }
+                  ?></a></li>
              </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
