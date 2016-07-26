@@ -29,6 +29,16 @@ class Posts_model extends CI_Model {
     return $con->result();
 
   }
+
+//Lista de post pot usuario
+  public function post_user()
+  {
+  $this->db->order_by('Id_articulo', 'desc');
+  $this->db->where('Autor', $this->session->userdata('username'));
+  $consulta =  $this->db->get('Posts');
+  return $consulta->result();
+  }
+
   //Mostrar el articulo en otra página
     public function detalle_post($id_post)
     {

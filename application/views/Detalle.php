@@ -5,9 +5,9 @@
     <h1><?php echo $detalle->Nombre_articulo; ?></h1>
     <p><?php echo $detalle->Contenido_total; ?></p>
     <div>
-<span class="badge">Fecha: <?php echo $detalle->Fecha ?></span>
+<span class="badge">Date: <?php echo $detalle->Fecha ?></span>
 <div class="pull-right">
-   <span class="label label-warning">Autor: <?php echo $detalle->Autor ?></span>
+   <span class="label label-warning">Author: <?php echo $detalle->Autor ?></span>
 </div>
      </div>
     <hr>

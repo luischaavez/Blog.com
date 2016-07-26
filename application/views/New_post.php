@@ -1,5 +1,5 @@
 <br><br><br><br>
-
+<form class="form-horizontal">
 <fieldset>
 
 
@@ -39,6 +39,7 @@
 </div>
 <?php echo form_close() ?>
 </fieldset>
+</form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

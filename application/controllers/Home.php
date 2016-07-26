@@ -48,19 +48,24 @@ Class Home extends CI_Controller
 
   public function vista_newpost(){
     $data['titulo'] = 'New post';
-    $this->load->view('estaticos/Navbar',$data);
-    $this->load->view('New_post');
+    if ($this->session->userdata('logueado')){
+      $this->load->view('estaticos/Navbar',$data);
+      $this->load->view('New_post');
+    }else {
+      redirect(base_url().'Home/index', $method ='auto');
+    }
+
   }
 
   public function new_post()
   {
     //Reglas
-    $this->form_validation->set_rules('tittle', 'tittle', 'required|min_length[20]|trim');
-    $this->form_validation->set_rules('desc', 'desc', 'required|min_length[20]|trim');
-    $this->form_validation->set_rules('content', 'content', 'required|min_length[20]|trim');
+    $this->form_validation->set_rules('tittle', 'tittle', 'required|min_length[10]|trim');
+    $this->form_validation->set_rules('desc', 'desc', 'required|min_length[10]|trim');
+    $this->form_validation->set_rules('content', 'content', 'required|min_length[10]|trim');
 
     $this->form_validation->set_message('required', 'This field must not be empty');
-    $this->form_validation->set_message('min_length', 'The field needs to have at less 20 chars');
+    $this->form_validation->set_message('min_length', 'The field needs to have at less 10 chars');
 
 //Verificar la validacion de las reglas
     if (!$this->form_validation->run() == FALSE)

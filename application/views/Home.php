@@ -10,10 +10,10 @@
     <h1><?php echo anchor ($url,$item->Nombre_articulo); ?></h1>
     <p><?php echo $item->Contenido; ?></p>
     <div>
-<span class="badge">Fecha: <?php echo $item->Fecha ?></span>
+<span class="badge">Date: <?php echo $item->Fecha ?></span>
 
 <div class="pull-right">
-   <span class="label label-warning">Autor: <?php echo $item->Autor ?></span>
+   <span class="label label-warning">Author: <?php echo $item->Autor ?></span>
 </div>
      </div>
     <hr>
