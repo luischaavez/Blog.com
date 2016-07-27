@@ -43,6 +43,10 @@ Class Home extends CI_Controller
 
     $this->Comment_model->insert($comment);
     if ($comment){
+      $url = base_url().'Home/detalle'.$post;
+      echo "<script> alert ('¡Published!');
+      window.location.href = '$url';
+      </script>";
       }
   }
 

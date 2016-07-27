@@ -38,7 +38,7 @@ class Contacto extends CI_Controller
 # Make the call to the client.
  $mgClient->sendMessage($domain, array(
     'from'    => $correo,
-    'to'      => 'wicho-gct@hotmail.com',
+    'to'      => 'luischa04@gmail.com',
     'subject' => 'Hello',
     'text'    => $mensaje
   ));

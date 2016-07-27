@@ -48,7 +48,7 @@
 <?php foreach ($post as $item):?>
 
 <form class="form-horizontal">
-<div class="container" style="width: 1200px; text-align: left;">
+<div class="container" style="width: 1400px; text-align: left; left: 400px; position:relative;">
 	<div class="col-md-6">
         <div class="panel panel-default">
             <div class="panel-body">
@@ -84,9 +84,12 @@
                             <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Comment</a></li>
                             <li><a href="#"><i class="glyphicon glyphicon-share-alt"></i> Share</a></li>
                         </ul>
-                   </div>
-                   <div class="post-footer-comment-wrapper">
-                       <div class="comment-form">
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
                          </form>
                        <?php endforeach; ?>
 
